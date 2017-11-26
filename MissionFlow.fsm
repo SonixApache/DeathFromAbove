@@ -1,0 +1,336 @@
+/*%FSM<COMPILE "C:\Program Files (x86)\Steam\steamapps\common\Arma 3 Tools\FSMEditor\scriptedFSM.cfg, DeathFromAbove">*/
+/*%FSM<HEAD>*/
+/*
+item0[] = {"init",0,250,-40.348846,-149.418610,49.651154,-99.418610,0.000000,"init"};
+item1[] = {"SERVER_CHECK",4,218,-192.040344,-145.759003,-102.040337,-95.759003,0.000000,"SERVER" \n "CHECK"};
+item2[] = {"exitwith",1,250,-331.799194,-145.967834,-241.799164,-95.967850,0.000000,"exitwith"};
+item3[] = {"true",8,218,46.768707,-109.053528,136.768707,-59.053528,0.000000,"true"};
+item4[] = {"setup",2,250,-65.850739,-70.986130,24.149277,-20.986130,0.000000,"setup"};
+item5[] = {"big_fuckin_loop",2,250,-40.425049,185.419510,49.574966,235.419525,0.000000,"big" \n "fuckin" \n "loop"};
+item6[] = {"Timeout",4,218,-120.717957,38.292908,-30.717957,88.292908,0.000000,"Timeout"};
+item7[] = {"true",8,218,14.576012,-18.929199,104.576019,31.070801,0.000000,"true"};
+item8[] = {"Plane_Destroyed",4,218,64.028519,356.215790,154.028534,406.215851,0.000000,"Plane" \n "Destroyed?"};
+item9[] = {"PLANE_DESTROYED",1,250,68.035950,451.391022,158.036011,501.390930,0.000000,"PLANE" \n "DESTROYED"};
+item10[] = {"hostage_extracted",4,218,-203.821426,378.327026,-93.727768,481.444244,3.000000,"hostage" \n "extracted?"};
+item11[] = {"You_win_",1,250,-190.972366,509.180603,-100.972343,559.180603,0.000000,"You win!"};
+item12[] = {"Insert_Chopper",4,218,-190.578339,210.174072,-100.578339,260.174072,0.000000,"Insert" \n "Chopper"};
+item13[] = {"delete__insertion",2,250,-305.517059,179.845551,-215.517151,229.845551,0.000000,"delete " \n "insertion " \n "chopper"};
+item14[] = {"true",8,218,-191.033676,146.784576,-101.033630,196.784576,0.000000,"true"};
+item15[] = {"hostage__dead_",4,218,-52.185371,354.212067,37.814636,404.211945,0.000000,"hostage " \n "dead?"};
+item16[] = {"HOSTAGE_DEAD",1,250,-54.188995,451.390961,35.811035,501.390930,0.000000,"HOSTAGE" \n "DEAD"};
+item17[] = {"Infantry_Dead_",4,218,191.262848,353.210175,281.262878,403.210236,0.000000,"Infantry" \n "Dead?"};
+item18[] = {"INFANTRY_DEAD",1,250,189.259094,457.401886,279.259247,507.402008,0.000000,"INFANTRY" \n "DEAD"};
+item19[] = {"Hostage_Moved_",4,218,92.079895,220.966232,182.079895,270.966248,0.000000,"Hostage" \n "Moved?"};
+item20[] = {"Armor_up_Hostage",2,250,200.279053,179.890625,290.279083,229.890625,0.000000,"Armor up" \n "Hostage"};
+item21[] = {"true",8,218,94.083542,138.814972,184.083527,188.814972,0.000000,"true"};
+link0[] = {0,1};
+link1[] = {0,3};
+link2[] = {1,2};
+link3[] = {3,4};
+link4[] = {4,7};
+link5[] = {5,6};
+link6[] = {5,8};
+link7[] = {5,10};
+link8[] = {5,12};
+link9[] = {5,15};
+link10[] = {5,17};
+link11[] = {5,19};
+link12[] = {6,5};
+link13[] = {7,5};
+link14[] = {8,9};
+link15[] = {10,11};
+link16[] = {12,13};
+link17[] = {13,14};
+link18[] = {14,5};
+link19[] = {15,16};
+link20[] = {17,18};
+link21[] = {19,20};
+link22[] = {20,21};
+link23[] = {21,5};
+globals[] = {0.000000,0,0,0,0,640,480,1,38,6316128,1,-425.220123,536.079895,595.362671,-116.217590,793,587,1};
+window[] = {0,-1,-1,-1,-1,820,409,1849,61,1,811};
+*//*%FSM</HEAD>*/
+class FSM
+{
+        fsmName = "DeathFromAbove";
+        class States
+        {
+                /*%FSM<STATE "init">*/
+                class init
+                {
+                        name = "init";
+                        itemno = 0;
+                        init = /*%FSM<STATEINIT""">*/""/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "true">*/
+                                class true
+                                {
+                                        itemno = 3;
+                                        priority = 0.000000;
+                                        to="setup";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "SERVER_CHECK">*/
+                                class SERVER_CHECK
+                                {
+                                        itemno = 1;
+                                        priority = 0.000000;
+                                        to="exitwith";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"!isServer"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "exitwith">*/
+                class exitwith
+                {
+                        name = "exitwith";
+                        itemno = 2;
+                        init = /*%FSM<STATEINIT""">*/"exitWith{};"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "setup">*/
+                class setup
+                {
+                        name = "setup";
+                        itemno = 4;
+                        init = /*%FSM<STATEINIT""">*/"[objVehicleOne, ""scripts\airdrop.sqf""] call BIS_fnc_execVM;" \n
+                         "" \n
+                         "_ChopperTime = time + 60;" \n
+                         "_HostageMoved = false;" \n
+                         "" \n
+                         "[west, ""tskExam"", [""" \n
+                         "Secure the hostage and bring him back to the extraction point." \n
+                         """, ""Extract hostage"", ""EXTRACT""], objnull, ""Assigned"", 0, true, ""run"", true] call BIS_fnc_taskCreate;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "true">*/
+                                class true
+                                {
+                                        itemno = 7;
+                                        priority = 0.000000;
+                                        to="big_fuckin_loop";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "big_fuckin_loop">*/
+                class big_fuckin_loop
+                {
+                        name = "big_fuckin_loop";
+                        itemno = 5;
+                        init = /*%FSM<STATEINIT""">*/"" \n
+                         "_timeout = time + 2;" \n
+                         "true;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "hostage_extracted">*/
+                                class hostage_extracted
+                                {
+                                        itemno = 10;
+                                        priority = 3.000000;
+                                        to="You_win_";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"time > _timeout && (objHostage in list trgEnd)"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "Plane_Destroyed">*/
+                                class Plane_Destroyed
+                                {
+                                        itemno = 8;
+                                        priority = 0.000000;
+                                        to="PLANE_DESTROYED";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"time > _timeout && !alive objWILDFIRE"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "Insert_Chopper">*/
+                                class Insert_Chopper
+                                {
+                                        itemno = 12;
+                                        priority = 0.000000;
+                                        to="delete__insertion";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"time > _timeout && time > _ChopperTime"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "hostage__dead_">*/
+                                class hostage__dead_
+                                {
+                                        itemno = 15;
+                                        priority = 0.000000;
+                                        to="HOSTAGE_DEAD";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"time > _timeout && !alive objHostage"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "Infantry_Dead_">*/
+                                class Infantry_Dead_
+                                {
+                                        itemno = 17;
+                                        priority = 0.000000;
+                                        to="INFANTRY_DEAD";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"time > _timeout && { alive _x } count (units (group SQL)) < 1"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "Hostage_Moved_">*/
+                                class Hostage_Moved_
+                                {
+                                        itemno = 19;
+                                        priority = 0.000000;
+                                        to="Armor_up_Hostage";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"time > _timeout && !_HostageMoved && !(objHostage in list trgHostageMoved)"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                                /*%FSM<LINK "Timeout">*/
+                                class Timeout
+                                {
+                                        itemno = 6;
+                                        priority = 0.000000;
+                                        to="big_fuckin_loop";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"time > _timeout;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "PLANE_DESTROYED">*/
+                class PLANE_DESTROYED
+                {
+                        name = "PLANE_DESTROYED";
+                        itemno = 9;
+                        init = /*%FSM<STATEINIT""">*/"""endGunshipDead"" call BIS_fnc_EndMissionServer;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "You_win_">*/
+                class You_win_
+                {
+                        name = "You_win_";
+                        itemno = 11;
+                        init = /*%FSM<STATEINIT""">*/"systemchat ""Ending it."";" \n
+                         "objHostage allowdamage false;" \n
+                         "[""tskExam"", ""Succeeded"", true] call BIS_fnc_taskSetState;" \n
+                         """End1"" call BIS_fnc_EndMissionServer;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "delete__insertion">*/
+                class delete__insertion
+                {
+                        name = "delete__insertion";
+                        itemno = 13;
+                        init = /*%FSM<STATEINIT""">*/"deletevehicle InsertChopper;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "true">*/
+                                class true
+                                {
+                                        itemno = 14;
+                                        priority = 0.000000;
+                                        to="big_fuckin_loop";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "HOSTAGE_DEAD">*/
+                class HOSTAGE_DEAD
+                {
+                        name = "HOSTAGE_DEAD";
+                        itemno = 16;
+                        init = /*%FSM<STATEINIT""">*/"""endHostageDead"" call BIS_fnc_EndMissionServer;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "INFANTRY_DEAD">*/
+                class INFANTRY_DEAD
+                {
+                        name = "INFANTRY_DEAD";
+                        itemno = 18;
+                        init = /*%FSM<STATEINIT""">*/"""endInfantryDead"" call BIS_fnc_EndMissionServer;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                        };
+                };
+                /*%FSM</STATE>*/
+                /*%FSM<STATE "Armor_up_Hostage">*/
+                class Armor_up_Hostage
+                {
+                        name = "Armor_up_Hostage";
+                        itemno = 20;
+                        init = /*%FSM<STATEINIT""">*/"objHostage addVest ""V_EOD_blue_F"";" \n
+                         "objHostage addHeadgear ""H_PASGT_basic_blue_F"";" \n
+                         "objHostage addGoggles ""G_EyeProtectors_Earpiece_F"";" \n
+                         "true;"/*%FSM</STATEINIT""">*/;
+                        precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;
+                        class Links
+                        {
+                                /*%FSM<LINK "true">*/
+                                class true
+                                {
+                                        itemno = 21;
+                                        priority = 0.000000;
+                                        to="big_fuckin_loop";
+                                        precondition = /*%FSM<CONDPRECONDITION""">*/""/*%FSM</CONDPRECONDITION""">*/;
+                                        condition=/*%FSM<CONDITION""">*/"true;"/*%FSM</CONDITION""">*/;
+                                        action=/*%FSM<ACTION""">*/""/*%FSM</ACTION""">*/;
+                                };
+                                /*%FSM</LINK>*/
+                        };
+                };
+                /*%FSM</STATE>*/
+        };
+        initState="init";
+        finalStates[] =
+        {
+                "exitwith",
+                "PLANE_DESTROYED",
+                "You_win_",
+                "HOSTAGE_DEAD",
+                "INFANTRY_DEAD",
+        };
+};
+/*%FSM</COMPILE>*/

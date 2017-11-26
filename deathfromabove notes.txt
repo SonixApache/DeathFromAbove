@@ -1,0 +1,4 @@
+make hostage armoring work
+use same trigger to add two more objectives (make contact with- and protect)
+FIX FRAMES
+^ dynamic spawn? kill AI features?

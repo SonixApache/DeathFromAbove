@@ -1,0 +1,109 @@
+disabledAI = 1; // No AI slots in the lobby
+aiKills = 1;
+respawn = 3; //Base respawn
+respawnTemplates[] = {"Spectator","Counter"};
+respawnOnStart = -1;
+respawnDelay = 300;
+corpseManagerMode = 0; //Don't remove corpses
+enableDebugConsole = 1; //Allow admins to use the debug console
+showGroupIndicator = 0; //Replace GPS with a STHUD like element
+
+//Shown at mission select
+overviewText = "Extract a hostage under the cover of a VF-44 X gunship.";
+class Header {
+	gameType = COOP;
+	minplayers = 5;
+	maxplayers = 8;
+};
+
+//Shown during loading screen
+author="SonixApache";
+loadScreen = "images\flir.jpg";
+OnLoadName = "DEATH FROM ABOVE";  //Big text on top, has a small space
+OnLoadMission = "Extract a hostage under the cover of a VF-44 X gunship."; //Small text on bottom, has 4 lines
+
+//Settings for adv. med
+class Params
+{
+    class ace_medical_level
+    {
+        title = "ACE3 Medical Level";
+        ACE_setting = 1;
+        values[] = {1,2};
+        texts[] = {"Basic", "Advanced"};
+        default = 1;
+    };
+    class ace_medical_enableRevive
+    {
+        title = "Enable ACE3 Revive";
+        ACE_setting = 1;
+        values[] = {0,1};
+        texts[] = {"No", "Yes"};
+        default = 1;
+    };
+};
+
+//Custom insignia
+class CfgUnitInsignia
+{
+	class snx_ins_TaskForce141Patch
+	{
+		displayName = "Task Force 141"; 
+		author = "SonixApache"; 
+		texture = "images\TF141Patch.paa";
+		textureVehicle = "images\TF141Patch.paa"; 
+	};
+};
+
+class cfgDebriefing
+{
+	class End1
+	{
+		title = "Mission Completed!";
+		subtitle = "We made it, boys.";
+		description = "The hostage was brought back safely. Well done.";
+		pictureBackground = "images\end1.jpg";
+		picture = "b_plane";
+		pictureColor[] = {0.1,0.1,0.8,1};
+	};
+
+	class endInfantryDead
+	{
+		title = "Mission Failed!";
+		subtitle = "Infantry KIA!";
+		description = "The gunship crew failed to protect the infantry. The mission is a failure.";
+		pictureBackground = "images\endLoser.jpg";
+		picture = "KIA";
+		pictureColor[] = {0.8,0.1,0.1,1};
+	};
+	
+	class endHostageDead
+	{
+		title = "Mission Failed!";
+		subtitle = "Hostage lost!";
+		description = "The hostage died. The mission is a complete failure.";
+		pictureBackground = "images\endLoser.jpg";
+		picture = "KIA";
+		pictureColor[] = {0.8,0.1,0.1,1};
+	};
+	
+	class endGunshipDead
+	{
+		title = "Mission Failed!";
+		subtitle = "Gunship destroyed!";
+		description = "The gunship was shot down, making the mission effectively impossible to complete.";
+		pictureBackground = "images\endLoser.jpg";
+		picture = "KIA";
+		pictureColor[] = {0.8,0.1,0.1,1};
+	};
+	
+	class loser
+	{
+		title = "Mission Failed!";
+		subtitle = "You fucked up, somehow.";
+		description = "Too bad. Try again.";
+		pictureBackground = "images\endLoser.jpg";
+		picture = "KIA";
+		pictureColor[] = {0.8,0.1,0.1,1};
+	};
+};
